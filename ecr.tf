@@ -1,3 +1,3 @@
-resource "aws_ecr_repository" "worker" {
-  name = "worker"
+resource "aws_ecr_repository" "container_test" {
+  name = "container-test"
 }
