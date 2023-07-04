@@ -10,7 +10,7 @@
       {
           "name": "task-test-3000-tcp",
           "containerPort": 3000,
-          "hostPort": 80,
+          "hostPort": 3000,
           "protocol": "tcp",
           "appProtocol": "http"
       }
