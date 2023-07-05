@@ -15,9 +15,10 @@
           "appProtocol": "http"
       }
     ],
-    "log_configuration": {
-      "log_driver": "awslogs",
+    "logConfiguration": {
+      "logDriver": "awslogs",
       "options": {
+        "awslogs-create-group": "true",
         "awslogs-group": "${CLOUDWATCH_ECS}",
         "awslogs-region": "us-east-1",
         "awslogs-stream-prefix": "ecs"

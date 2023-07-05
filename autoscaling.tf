@@ -1,39 +1,7 @@
-data "aws_ami" "ecs_optimized" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["amazon-ecs-optimized"]
-  }
-
-  filter {
-    name   = "owner-alias"
-    values = ["amazon"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  filter {
-    name   = "architecture"
-    values = ["x86_64"]
-  }
-
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
-
-  owners = ["amazon"]
-
-  region = "us-east-1"
-}
-
 resource "aws_launch_template" "engine" {
   name          = "launch-template-test"
-  image_id      = data.aws_ami.ecs_optimized.id
+  # image_id      = "ami-06b09bfacae1453cb" // The current AMI Amazon Linux 2
+  image_id      = "ami-0d536b9bd6d2b7f39" 
   instance_type = "t3.micro"
   user_data     = base64encode("#!/bin/bash\necho ECS_CLUSTER=my-cluster >> /etc/ecs/ecs.config")
 
