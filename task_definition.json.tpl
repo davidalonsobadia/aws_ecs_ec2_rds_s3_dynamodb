@@ -8,9 +8,9 @@
     "environment": [],
     "portMappings": [
       {
-          "name": "task-test-3000-tcp",
-          "containerPort": 3000,
-          "hostPort": 3000,
+          "name": "task-test-5000-tcp",
+          "containerPort": 5000,
+          "hostPort": 5000,
           "protocol": "tcp",
           "appProtocol": "http"
       }
