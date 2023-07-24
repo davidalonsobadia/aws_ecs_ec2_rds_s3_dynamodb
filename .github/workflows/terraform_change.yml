@@ -17,7 +17,6 @@ env:
 
   RDS_USERNAME: ${{ secrets.RDS_USERNAME}}
   RDS_PASSWORD: ${{ secrets.RDS_PASSWORD}}
-
   RDS_DB_NAME: ${{ vars.RDS_DB_NAME}}
   RDS_PORT: ${{ vars.RDS_DB_PORT}}
 
