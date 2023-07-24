@@ -14,7 +14,7 @@ variable "rds_db_name" {
 }
 
 variable "rds_port" {
-  type        = number
+  type        = string
   description = "Database port"
-  default     = 3306 
+  default     = "3306" 
 }
