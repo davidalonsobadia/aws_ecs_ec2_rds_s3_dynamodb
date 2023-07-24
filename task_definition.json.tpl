@@ -5,7 +5,28 @@
     "cpu": 256,
     "memory": 512,
     "image": "${REPOSITORY_URL}:latest",
-    "environment": [],
+    "environment": [
+      {
+        "name": "MYSQL_HOST",
+        "value": "${MYSQL_HOST}"
+      },
+      {
+        "name": "MYSQL_PORT",
+        "value": "${MYSQL_PORT}"
+      },
+      {
+        "name": "MYSQL_USERNAME",
+        "value": "${MYSQL_USERNAME}"
+      },
+      {
+        "name": "MYSQL_PASSWORD",
+        "value": "${MYSQL_PASSWORD}"
+      },
+      {
+        "name": "DB_NAME",
+        "value": "${DB_NAME}"
+      }
+    ],
     "portMappings": [
       {
           "name": "task-test-5000-tcp",

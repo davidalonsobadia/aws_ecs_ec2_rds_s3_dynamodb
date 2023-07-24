@@ -15,8 +15,11 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  TF_VAR_rds_username: ${{ secrets.RDS_USERNAME}}
-  TF_VAR_rds_password: ${{ secrets.RDS_PASSWORD}}
+  RDS_USERNAME: ${{ secrets.RDS_USERNAME}}
+  RDS_PASSWORD: ${{ secrets.RDS_PASSWORD}}
+
+  RDS_DB_NAME: ${{ vars.RDS_DB_NAME}}
+  RDS_PORT: ${{ vars.RDS_DB_PORT}}
 
 jobs:
   terraform:
