@@ -36,3 +36,16 @@ resource "aws_iam_user_policy_attachment" "s3_permissions" {
 resource "aws_iam_access_key" "s3_user_access_key" {
   user = aws_iam_user.s3_user.name
 }
+
+resource "aws_iam_user" "dynamodb_user" {
+  name = "dynamodb_user"
+}
+
+resource "aws_iam_user_policy_attachment" "dynamodb_permissions" {
+  user       = aws_iam_user.dynamodb_user.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
+}
+
+resource "aws_iam_access_key" "dynamodb_user_access_key" {
+  user = aws_iam_user.dynamodb_user.name
+}

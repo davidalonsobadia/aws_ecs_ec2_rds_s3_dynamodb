@@ -1,3 +1,9 @@
+variable "aws_region" {
+  type        = string
+  description = "AWS Region name"
+  default     = "us-east-1"
+}
+
 variable "rds_username" {
   type        = string
   description = "Username for Database"

@@ -4,6 +4,7 @@ resource "aws_ecs_task_definition" "task_definition" {
 
   depends_on = [
     data.aws_db_instance.mysql,
-    aws_iam_user.s3_user
+    aws_iam_user.s3_user,
+    aws_iam_user.dynamodb_user
   ]
 }

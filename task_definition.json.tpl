@@ -37,6 +37,18 @@
       {
         "name": "AWS_S3_BUCKET_NAME",
         "value": "${AWS_S3_BUCKET_NAME}"
+      },
+      {
+        "name": "AWS_DYNAMODB_ACCESS_KEY_ID",
+        "value": "${AWS_DYNAMODB_ACCESS_KEY_ID}"
+      },
+      {
+        "name": "AWS_DYNAMODB_SECRET_ACCESS_KEY",
+        "value": "${AWS_DYNAMODB_SECRET_ACCESS_KEY}"
+      },
+      {
+        "name": "AWS_REGION_NAME",
+        "value": "${AWS_REGION_NAME}"
       }
     ],
     "portMappings": [
@@ -53,7 +65,7 @@
       "options": {
         "awslogs-create-group": "true",
         "awslogs-group": "${CLOUDWATCH_ECS}",
-        "awslogs-region": "us-east-1",
+        "awslogs-region": "${AWS_REGION_NAME}",
         "awslogs-stream-prefix": "ecs"
       }
     }
