@@ -36,6 +36,18 @@ jobs:
         id: init
         run: terraform init
 
+      - name: Remove from state resources to not destroy
+        id: rmstate
+        run: |
+          terraform state rm aws_ecr_repository.container_test
+          terraform state rm aws_s3_bucket.my_bucket
+
       - name: Terraform Destroy
         id: destroy
         run: terraform destroy -auto-approve
+      
+      - name: Import to state resources not destroyed
+        id: import
+        run: |
+          terraform import aws_ecr_repository.container_test container-test
+          terraform import aws_s3_bucket.my_bucket test-bucket-name-remove
